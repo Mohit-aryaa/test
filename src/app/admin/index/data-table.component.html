@@ -54,6 +54,16 @@
 
   </div>
 
+  <nav>
+    <button class="btn btn btn-primary" (click)="toggleLeft()">Toggle Open/Close</button>
+  </nav>
+  
+  <div class="py-3 w-100">
+    <div [@moveLeft]="isMoved ? 'left' : 'right'" class="open-close-container  card rounded  col-6 border p-3">
+      <p class="text-white">The box is now {{ isMoved ? 'left' : 'right' }}!</p>
+    </div>
+  </div>
+
   <ng-template #editModal let-modal>
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Profile update</h4>

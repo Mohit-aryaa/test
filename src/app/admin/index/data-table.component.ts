@@ -7,10 +7,44 @@ import {CanActivate, Router, RouterStateSnapshot, ActivatedRouteSnapshot} from '
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { AuthServiceService } from '../auth-service.service';
 
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
+
 
 
 @Component({
   selector: 'app-data-table',
+  animations: [
+    trigger('moveLeft', [
+      // ...
+      state('left', style({
+        opacity: 1,
+       backgroundColor: 'red',
+       height: '400px'
+      })),
+      state('right', style({
+        marginLeft: '50%' ,
+        opacity: 0.8,
+        height: '400px',
+        background:'url(https://media.giphy.com/media/PrvuQdqyO3kNa/giphy.gif?cid=ecf05e475s9nldza7lusgfg7pss4ow3dfhkel5ykbrrqqmxl&rid=giphy.gif&ct=g)',
+        //backgroundColor: '#c6ecff'
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center'
+      })),
+      transition('left => right', [
+        animate('0.5s')
+      ]),
+      transition('right => left', [
+        animate('0.5s')
+      ]),
+    ]),
+  ],
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.css']
 })
@@ -20,6 +54,8 @@ export class DataTableComponent implements AfterViewInit {
   @ViewChild('editModal') editModal: any;
   dataSource = new MatTableDataSource<any>();
 
+
+ 
   edit = {
     Id: 'number',
     FirstName: 'string',
@@ -34,6 +70,7 @@ export class DataTableComponent implements AfterViewInit {
   }
   ngOnInit() {
     //this.userlogged();
+    
   }
   ngAfterViewInit(): void {
     this.compileTable();
@@ -53,6 +90,12 @@ export class DataTableComponent implements AfterViewInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
     //console.log(filterValue);
+  }
+
+  isMoved = true;
+
+  toggleLeft() {
+    this.isMoved = !this.isMoved;
   }
 
   openEditModal(data:any, index:any) {
