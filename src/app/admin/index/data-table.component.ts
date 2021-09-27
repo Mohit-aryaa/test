@@ -50,6 +50,11 @@ export class DataTableComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+    //console.log(filterValue);
+  }
+
   openEditModal(data:any, index:any) {
     console.log(data);
     this.edit.Id = data.id;
