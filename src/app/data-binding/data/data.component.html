@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <form  class="col-3 p-3 card mt-3" (submit)="addProduct()">
+        <div class="h5">Add Data</div>
+        <input type="text" class="form-control mb-3" name="name" placeholder="name" [(ngModel)]="setName" required>
+        <input type="number" class="form-control mb-3" name="contact" placeholder="contact" [(ngModel)]="setContact" required>
+        <input type="email" class="form-control mb-3" name="email" placeholder="email" [(ngModel)]="setEmail" required>
+        <button type="submit" class="btn btn-primary btn-sm mb-3" [disabled]="!enableBtn()">Add</button>
+      </form>
+      <div class="row">
+        <div *ngFor="let product of products" class="col-md-3">
+          <app-data-get [product]="product"  (productDelete)="deleteProduct($event)">
+            
+          </app-data-get>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+

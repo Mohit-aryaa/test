@@ -1,0 +1,23 @@
+
+  <div class="form-section">
+    <div class="col-11 mx-auto">
+     <form class="user-form bg-white shadow" [formGroup]="loginForm"  (ngSubmit)="loginProcess()">
+        <div class="bg-primary w-100 h4 form-title  text-white fw-bold px-4 py-3"><img src="favicon.ico" alt="" class="mx-2"> Welcome Admin</div>
+        <div class="form-body">
+           <div class="form-group mb-4">
+             <label for="">Email</label>
+             <input type="email" class="form-control" formControlName="email" >  
+             <span class="text-danger" *ngIf="email && email.invalid && email.touched">*Invalid Email</span>
+           </div>
+           <div class="form-group mb-4">
+             <label for="">Password</label>
+             <input type="password" class="form-control" formControlName="password">  
+           </div>
+           <div class="mb-3 w-100">
+             <button type="submit" class="btn btn-primary w-100" [disabled]="!loginForm.valid">Login</button>
+           </div>
+        </div>
+       </form>
+    </div>
+ </div>
+

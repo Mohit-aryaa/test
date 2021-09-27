@@ -1,0 +1,20 @@
+.form-section {
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: grid;
+    align-content: center;
+}
+.user-form {
+    margin: 2rem auto;
+    border-radius: 8px;
+    max-width: 368px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.form-body {
+    padding: 2rem;
+}
