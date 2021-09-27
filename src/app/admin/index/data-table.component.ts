@@ -32,7 +32,7 @@ import {
         marginLeft: '50%' ,
         opacity: 0.8,
         height: '400px',
-        background:'url(https://media.giphy.com/media/PrvuQdqyO3kNa/giphy.gif?cid=ecf05e475s9nldza7lusgfg7pss4ow3dfhkel5ykbrrqqmxl&rid=giphy.gif&ct=g)',
+        background:'url(https://media.giphy.com/media/BcPbK9ci4EU31qUTkR/giphy.gif?cid=ecf05e47opqaif7o8gxwgqc3ovbygzjtf881sypmwerozm5x&rid=giphy.gif&ct=g)',
         //backgroundColor: '#c6ecff'
         backgroundSize: 'cover',
         backgroundPosition: 'center center'
