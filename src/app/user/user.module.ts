@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
+import { HttpClientModule } from '@angular/common/http';
+import {  MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -11,7 +13,8 @@ import { UserComponent } from './user.component';
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    HttpClientModule,
   ]
 })
 export class UserModule { }

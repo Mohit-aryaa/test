@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './admin/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -25,7 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SharedModule,
     HttpClientModule,
     NgbModule,
-   
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

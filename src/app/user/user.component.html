@@ -3,5 +3,17 @@
     <a [routerLink]="['/admin']" routerLinkActive="router-link-active" ><button class="btn btn-outline-primary">
         click here see admin panel
     </button></a>
-
+    <div class="my-3 col-lg-4 col-md-8 col-11">
+        <div class="form-group mb-3">
+            <label for="" class="mb-1">Select an image</label>
+            <input #uploadImg type="file" class="form-control" id="uploadImg" name="uploadImg" (change)="onFileSelected($event)" required>
+        </div>
+        <button  class="btn btn-primary mb-3" id="uploadBtn" (click)="onImgUpload()" disabled>Upload</button>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar"  aria-valuemin="0" aria-valuemax="100" [style.width]="progress + '%'">
+              {{progress}}
+            </div>
+          </div>
+    </div>
+   
 </div>
